@@ -49,7 +49,7 @@
       <bpmn:outgoing>SequenceFlow_0lnmnwx</bpmn:outgoing>
       <bpmn:messageEventDefinition />
     </bpmn:startEvent>
-    <bpmn:manualTask id="Task_13sbv63" name="Identify Candidate">
+    <bpmn:manualTask id="Task_13sbv63" name="Identify Hannes">
       <bpmn:incoming>SequenceFlow_0lnmnwx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_03bw10x</bpmn:outgoing>
     </bpmn:manualTask>
