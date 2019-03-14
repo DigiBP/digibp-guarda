@@ -12,11 +12,11 @@
 
 # Idea Hunting
 
-+ Sheetsu as database (google sheet service)
++ [Sheetsu](https://sheetsu.com/dashboard) as database (google sheet service)
 + Customer Journey based ideas?
 + Business Intelligence (high level)
 + Feedback of the application process/progress during runtime
-+ Email service: "sendgrid"
-+ Application Feedback on unsuccful applications
++ Email service: [sendgrid](https://sendgrid.com/?opt=1)
++ Application Feedback on unsuccessful applications
 + Show me all jobs I am suitable for
-+ Matching Sorce
++ Matching Score?
