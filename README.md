@@ -9,3 +9,14 @@
 ## License
 
 - [Apache License, Version 2.0](https://github.com/DigiBP/digibp-archetype-camunda-boot/blob/master/LICENSE)
+
+# Idea Hunting
+
++ Sheetsu as database (google sheet service)
++ Customer Journey based ideas?
++ Business Intelligence (high level)
++ Feedback of the application process/progress during runtime
++ Email service: "sendgrid"
++ Application Feedback on unsuccful applications
++ Show me all jobs I am suitable for
++ Matching Sorce
