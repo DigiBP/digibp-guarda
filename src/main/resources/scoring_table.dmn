@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_1km74id" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+  <decision id="scoring_table" name="Decision Table">
+    <decisionTable id="decisionTable_1" hitPolicy="COLLECT" aggregation="SUM">
+      <input id="input_1" label="Alter">
+        <inputExpression id="inputExpression_1" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_065txjm">
+        <inputExpression id="LiteralExpression_0aabnsp" typeRef="integer">
+          <text>years of experience</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1fpeh7h">
+        <inputExpression id="LiteralExpression_09jzx8e" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0e123cc">
+        <inputExpression id="LiteralExpression_096uwzv" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="score" name="score" typeRef="integer" />
+      <rule id="DecisionRule_1huy7ae">
+        <inputEntry id="UnaryTests_1wyrr3y">
+          <text>[..12[</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1us1vmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gt247e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_124na3e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vdrnf4">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h1fmuf">
+        <inputEntry id="UnaryTests_00h4al5">
+          <text>[12..18[</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ewyolr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nirqjt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a4qnw0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o24nke">
+          <text>5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15olppf">
+        <inputEntry id="UnaryTests_0mnupsr">
+          <text>[18..]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15t2724">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ssm1u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qftqcm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fx5xq5">
+          <text>20</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11emssh">
+        <inputEntry id="UnaryTests_1wahhoi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0joqp8z">
+          <text>[..1[</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jgtax9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15nt8ia">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qdbxub">
+          <text>5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08g7qm5">
+        <inputEntry id="UnaryTests_0x691r3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02y9p1p">
+          <text>[1..3]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05pnvfs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mwdqs5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0by4cse">
+          <text>15</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
