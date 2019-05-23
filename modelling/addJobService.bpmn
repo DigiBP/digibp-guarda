@@ -4,14 +4,14 @@
     <bpmn:startEvent id="StartEvent_1" name="Add new Job">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="FormFieldJobURL" label="Job-URL" type="string" />
-          <camunda:formField id="FormFieldLogoURL" label="Logo-URL" type="string" />
-          <camunda:formField id="FormFieldCompanyName" label="Company Name" type="string" />
-          <camunda:formField id="FormFieldJobTitle" label="Job Title" type="string" />
-          <camunda:formField id="FormFieldJobLocation" label="Job Location" type="string" />
-          <camunda:formField id="FormFieldJobDescription" label="Job Description" type="string" />
-          <camunda:formField id="FormFieldPostDate" label="Post Date" type="string" />
-          <camunda:formField id="FormFieldJobCategory" label="Job Category" type="string" />
+          <camunda:formField id="FormFieldJobURL" label="Job-URL" type="string" defaultValue="URL" />
+          <camunda:formField id="FormFieldLogoURL" label="Logo-URL" type="string" defaultValue="Logo" />
+          <camunda:formField id="FormFieldCompanyName" label="Company Name" type="string" defaultValue="Company" />
+          <camunda:formField id="FormFieldJobTitle" label="Job Title" type="string" defaultValue="Title" />
+          <camunda:formField id="FormFieldJobLocation" label="Job Location" type="string" defaultValue="Location" />
+          <camunda:formField id="FormFieldJobDescription" label="Job Description" type="string" defaultValue="Description" />
+          <camunda:formField id="FormFieldPostDate" label="Post Date" type="string" defaultValue="a minute ago" />
+          <camunda:formField id="FormFieldJobCategory" label="Job Category" type="string" defaultValue="junior" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:outgoing>SequenceFlow_0wkok64</bpmn:outgoing>
@@ -28,21 +28,20 @@
               </camunda:map>
             </camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="javascript">const object = {
-	"url":FormFieldURL
+              <camunda:script scriptFormat="JavaScript">JSON.stringify({
+        "url":FormFieldJobURL
        ,"logo":FormFieldLogoURL
        ,"companyName":FormFieldCompanyName
        ,"jobTitle":FormFieldJobTitle
        ,"location":FormFieldJobLocation
-       ,"description":FormfieldDescription
+       ,"description":FormFieldJobDescription
        ,"postDate":FormFieldPostDate
        ,"Category":FormFieldJobCategory
-}
-out=JSON.stringify(object);</camunda:script>
+});</camunda:script>
             </camunda:inputParameter>
             <camunda:inputParameter name="url">https://hook.integromat.com/fz371me2m5iy7ryfvf9egmw7izc5cwdr</camunda:inputParameter>
           </camunda:inputOutput>
-          <camunda:connectorId>add_job_connector</camunda:connectorId>
+          <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0wkok64</bpmn:incoming>

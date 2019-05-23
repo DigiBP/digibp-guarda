@@ -73,8 +73,21 @@
     <bpmn:startEvent id="StartEvent_1" name="Application received">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="FormField" type="string" />
+          <camunda:formField id="FormFieldFirstName" label="First Name" type="string" />
+          <camunda:formField id="FormFieldLastName" label="Last Name" type="string" />
+          <camunda:formField id="FormFieldEmail" label="E-Mail" type="string" />
+          <camunda:formField id="FormFieldJobID" label="Job ID" type="string" />
+          <camunda:formField id="FormFieldJobCategory" label="Job Category" type="string" />
+          <camunda:formField id="FormFieldAgeSum" label="Sum" type="long" />
+          <camunda:formField id="FormFieldExpSum" label="Experience Sum" type="long" />
+          <camunda:formField id="FormFieldEduSum" label="Education Sum" type="long" />
+          <camunda:formField id="FormFieldZipCode" label="Zip Code" type="string" />
+          <camunda:formField id="FormFieldJobTitle" label="Job Title" type="string" />
+          <camunda:formField id="FormFieldCompany" label="Company" type="string" />
         </camunda:formData>
+        <camunda:executionListener event="start">
+          <camunda:script scriptFormat="JavaScript"></camunda:script>
+        </camunda:executionListener>
       </bpmn:extensionElements>
       <bpmn:outgoing>SequenceFlow_1bnaeq9</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_03s3xqg" />
