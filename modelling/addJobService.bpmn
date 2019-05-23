@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_018jddp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+  <bpmn:process id="Process_0b548ny" name="AddJobService" isExecutable="true" camunda:versionTag="1">
+    <bpmn:startEvent id="StartEvent_1" name="Add new Job">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="FormFieldJobURL" label="Job-URL" type="string" />
+          <camunda:formField id="FormFieldLogoURL" label="Logo-URL" type="string" />
+          <camunda:formField id="FormFieldCompanyName" label="Company Name" type="string" />
+          <camunda:formField id="FormFieldJobTitle" label="Job Title" type="string" />
+          <camunda:formField id="FormFieldJobLocation" label="Job Location" type="string" />
+          <camunda:formField id="FormFieldJobDescription" label="Job Description" type="string" />
+          <camunda:formField id="FormFieldPostDate" label="Post Date" type="string" />
+          <camunda:formField id="FormFieldJobCategory" label="Job Category" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_0wkok64</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0wkok64" sourceRef="StartEvent_1" targetRef="Task_13uyfe3" />
+    <bpmn:serviceTask id="Task_13uyfe3" name="Add Job">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="javascript">const object = {
+	"url":FormFieldURL
+       ,"logo":FormFieldLogoURL
+       ,"companyName":FormFieldCompanyName
+       ,"jobTitle":FormFieldJobTitle
+       ,"location":FormFieldJobLocation
+       ,"description":FormfieldDescription
+       ,"postDate":FormFieldPostDate
+       ,"Category":FormFieldJobCategory
+}
+out=JSON.stringify(object);</camunda:script>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/fz371me2m5iy7ryfvf9egmw7izc5cwdr</camunda:inputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>add_job_connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0wkok64</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_14jhgkv</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_14jhgkv" sourceRef="Task_13uyfe3" targetRef="EndEvent_0lb85ec" />
+    <bpmn:endEvent id="EndEvent_0lb85ec">
+      <bpmn:incoming>SequenceFlow_14jhgkv</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0b548ny">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="103" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="166" y="146" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0wkok64_di" bpmnElement="SequenceFlow_0wkok64">
+        <di:waypoint x="215" y="121" />
+        <di:waypoint x="265" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1ypkjsl_di" bpmnElement="Task_13uyfe3">
+        <dc:Bounds x="265" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_14jhgkv_di" bpmnElement="SequenceFlow_14jhgkv">
+        <di:waypoint x="365" y="121" />
+        <di:waypoint x="421" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0lb85ec_di" bpmnElement="EndEvent_0lb85ec">
+        <dc:Bounds x="421" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
