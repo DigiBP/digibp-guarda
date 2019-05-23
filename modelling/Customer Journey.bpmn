@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0sc03dq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0sc03dq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
   <bpmn:collaboration id="Collaboration_01iian5">
     <bpmn:participant id="Participant_0ex41jj" name="Customer Journey" processRef="Process_177v0ha" />
   </bpmn:collaboration>
@@ -10,25 +10,38 @@
         <bpmn:flowNodeRef>Task_1egrnj1</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1od73b1" name="Neutral">
-        <bpmn:flowNodeRef>Task_1sz8oei</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_04fx5ap</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Task_0qsd7dk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_1sz8oei</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0tztbtl" name="Bad">
-        <bpmn:flowNodeRef>Task_1reannx</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Task_0hqumrd</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0euab8x" name="Horrible">
         <bpmn:flowNodeRef>Task_1yzi4wp</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
-    <bpmn:task id="Task_1sz8oei" name="Search for job opportunities" />
-    <bpmn:task id="Task_1egrnj1" name="Interview" />
-    <bpmn:task id="Task_1reannx" name="Onboarding" />
-    <bpmn:task id="Task_1yzi4wp" name="Applying for job manually " />
-    <bpmn:task id="Task_0hqumrd" name="waiting for status information" />
-    <bpmn:task id="Task_04fx5ap" name="communication &#38; coordination about interview" />
-    <bpmn:task id="Task_0qsd7dk" name="Contract negogiation" />
+    <bpmn:task id="Task_1yzi4wp" name="Applying for job manually ">
+      <bpmn:incoming>SequenceFlow_11pyqa4</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_02xwrqc</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_0hqumrd" name="waiting for status information">
+      <bpmn:incoming>SequenceFlow_02xwrqc</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_04x4tht</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_04fx5ap" name="communication &#38; coordination about interview">
+      <bpmn:incoming>SequenceFlow_04x4tht</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ey57rf</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_1sz8oei" name="Search for job opportunities">
+      <bpmn:outgoing>SequenceFlow_11pyqa4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="SequenceFlow_11pyqa4" sourceRef="Task_1sz8oei" targetRef="Task_1yzi4wp" />
+    <bpmn:sequenceFlow id="SequenceFlow_02xwrqc" sourceRef="Task_1yzi4wp" targetRef="Task_0hqumrd" />
+    <bpmn:sequenceFlow id="SequenceFlow_04x4tht" sourceRef="Task_0hqumrd" targetRef="Task_04fx5ap" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ey57rf" sourceRef="Task_04fx5ap" targetRef="Task_1egrnj1" />
+    <bpmn:task id="Task_1egrnj1" name="Interview">
+      <bpmn:incoming>SequenceFlow_0ey57rf</bpmn:incoming>
+    </bpmn:task>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_01iian5">
@@ -54,7 +67,7 @@
         <dc:Bounds x="359" y="592" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_1sz8oei_di" bpmnElement="Task_1sz8oei">
-        <dc:Bounds x="225" y="353" width="100" height="80" />
+        <dc:Bounds x="224" y="353" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0hqumrd_di" bpmnElement="Task_0hqumrd">
         <dc:Bounds x="503" y="466" width="100" height="80" />
@@ -62,15 +75,33 @@
       <bpmndi:BPMNShape id="Task_1egrnj1_di" bpmnElement="Task_1egrnj1">
         <dc:Bounds x="791" y="221" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_0qsd7dk_di" bpmnElement="Task_0qsd7dk">
-        <dc:Bounds x="943" y="353" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Task_1reannx_di" bpmnElement="Task_1reannx">
-        <dc:Bounds x="1085" y="477" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_04fx5ap_di" bpmnElement="Task_04fx5ap">
         <dc:Bounds x="657" y="353" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_11pyqa4_di" bpmnElement="SequenceFlow_11pyqa4">
+        <di:waypoint x="324" y="393" />
+        <di:waypoint x="342" y="393" />
+        <di:waypoint x="342" y="632" />
+        <di:waypoint x="359" y="632" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_02xwrqc_di" bpmnElement="SequenceFlow_02xwrqc">
+        <di:waypoint x="459" y="632" />
+        <di:waypoint x="481" y="632" />
+        <di:waypoint x="481" y="506" />
+        <di:waypoint x="503" y="506" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_04x4tht_di" bpmnElement="SequenceFlow_04x4tht">
+        <di:waypoint x="603" y="506" />
+        <di:waypoint x="630" y="506" />
+        <di:waypoint x="630" y="393" />
+        <di:waypoint x="657" y="393" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ey57rf_di" bpmnElement="SequenceFlow_0ey57rf">
+        <di:waypoint x="757" y="393" />
+        <di:waypoint x="774" y="393" />
+        <di:waypoint x="774" y="261" />
+        <di:waypoint x="791" y="261" />
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
