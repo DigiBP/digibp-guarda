@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0sc03dq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+  <bpmn:collaboration id="Collaboration_01iian5">
+    <bpmn:participant id="Participant_0ex41jj" name="Customer Journey" processRef="Process_177v0ha" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_177v0ha" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_1m0erku">
+      <bpmn:lane id="Lane_1jp4gh8" name=" Very Satisfying" />
+      <bpmn:lane id="Lane_1iojx6v" name="Satisfying">
+        <bpmn:flowNodeRef>Task_1egrnj1</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1od73b1" name="Neutral">
+        <bpmn:flowNodeRef>Task_1sz8oei</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_04fx5ap</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0qsd7dk</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0tztbtl" name="Bad">
+        <bpmn:flowNodeRef>Task_1reannx</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_0hqumrd</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0euab8x" name="Horrible">
+        <bpmn:flowNodeRef>Task_1yzi4wp</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:task id="Task_1sz8oei" name="Search for job opportunities" />
+    <bpmn:task id="Task_1egrnj1" name="Interview" />
+    <bpmn:task id="Task_1reannx" name="Onboarding" />
+    <bpmn:task id="Task_1yzi4wp" name="Applying for job manually " />
+    <bpmn:task id="Task_0hqumrd" name="waiting for status information" />
+    <bpmn:task id="Task_04fx5ap" name="communication &#38; coordination about interview" />
+    <bpmn:task id="Task_0qsd7dk" name="Contract negogiation" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_01iian5">
+      <bpmndi:BPMNShape id="Participant_0ex41jj_di" bpmnElement="Participant_0ex41jj" isHorizontal="true">
+        <dc:Bounds x="129" y="81" width="1148" height="610" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1jp4gh8_di" bpmnElement="Lane_1jp4gh8" isHorizontal="true" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <dc:Bounds x="159" y="81" width="1118" height="110" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1iojx6v_di" bpmnElement="Lane_1iojx6v" isHorizontal="true" bioc:stroke="rgb(251, 140, 0)" bioc:fill="rgb(255, 224, 178)">
+        <dc:Bounds x="159" y="191" width="1118" height="143" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1od73b1_di" bpmnElement="Lane_1od73b1" isHorizontal="true" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <dc:Bounds x="159" y="334" width="1118" height="117" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0tztbtl_di" bpmnElement="Lane_0tztbtl" isHorizontal="true" bioc:stroke="rgb(142, 36, 170)" bioc:fill="rgb(225, 190, 231)">
+        <dc:Bounds x="159" y="451" width="1118" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0euab8x_di" bpmnElement="Lane_0euab8x" isHorizontal="true" bioc:stroke="rgb(229, 57, 53)" bioc:fill="rgb(255, 205, 210)">
+        <dc:Bounds x="159" y="571" width="1118" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1yzi4wp_di" bpmnElement="Task_1yzi4wp">
+        <dc:Bounds x="359" y="592" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1sz8oei_di" bpmnElement="Task_1sz8oei">
+        <dc:Bounds x="225" y="353" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0hqumrd_di" bpmnElement="Task_0hqumrd">
+        <dc:Bounds x="503" y="466" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1egrnj1_di" bpmnElement="Task_1egrnj1">
+        <dc:Bounds x="791" y="221" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_0qsd7dk_di" bpmnElement="Task_0qsd7dk">
+        <dc:Bounds x="943" y="353" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1reannx_di" bpmnElement="Task_1reannx">
+        <dc:Bounds x="1085" y="477" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_04fx5ap_di" bpmnElement="Task_04fx5ap">
+        <dc:Bounds x="657" y="353" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
