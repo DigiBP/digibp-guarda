@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_1km74id" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1km74id" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.0-beta.2">
   <decision id="scoringTable" name="Decision Table">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
     <decisionTable id="decisionTable_1" hitPolicy="COLLECT" aggregation="SUM">
       <input id="input_1" label="ageScore">
-        <inputExpression id="inputExpression_1" typeRef="integer">
+        <inputExpression id="inputExpression_1" typeRef="double">
           <text>age</text>
         </inputExpression>
       </input>
       <input id="InputClause_1fpeh7h" label="experienceScore">
-        <inputExpression id="LiteralExpression_09jzx8e" typeRef="integer">
+        <inputExpression id="LiteralExpression_09jzx8e" typeRef="double">
           <text>experienceScore</text>
         </inputExpression>
       </input>
       <input id="InputClause_1ip02vy" label="educationScore">
-        <inputExpression id="LiteralExpression_133cxnc" typeRef="integer">
+        <inputExpression id="LiteralExpression_133cxnc" typeRef="double">
           <text>educationScore</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="score" name="score" typeRef="integer" />
+      <output id="output_1" label="score" name="score" typeRef="double" />
       <rule id="DecisionRule_1huy7ae">
         <inputEntry id="UnaryTests_1wyrr3y">
-          <text>[..12[</text>
+          <text>[0..5[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gt247e">
           <text></text>
@@ -34,7 +37,7 @@
       </rule>
       <rule id="DecisionRule_1h1fmuf">
         <inputEntry id="UnaryTests_00h4al5">
-          <text>[12..18[</text>
+          <text>[5..20[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nirqjt">
           <text></text>
@@ -48,7 +51,7 @@
       </rule>
       <rule id="DecisionRule_15olppf">
         <inputEntry id="UnaryTests_0mnupsr">
-          <text>[18..]</text>
+          <text>&gt;= 20</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09ssm1u">
           <text></text>
@@ -65,7 +68,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jgtax9">
-          <text></text>
+          <text>[0..5[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_058xikz">
           <text></text>
@@ -79,13 +82,41 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_05pnvfs">
-          <text></text>
+          <text>&gt;= 5</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pd9f20">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0by4cse">
           <text>15</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1to5jhp">
+        <inputEntry id="UnaryTests_1fnwa5v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b7dxsy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tbr8fc">
+          <text>[0..5[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_022v75q">
+          <text>5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m37eq0">
+        <inputEntry id="UnaryTests_0b0sgpe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rb7sia">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13mwxdk">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_095dy9u">
+          <text>10</text>
         </outputEntry>
       </rule>
     </decisionTable>
