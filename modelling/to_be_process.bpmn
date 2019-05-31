@@ -6,6 +6,7 @@
     <bpmn:participant id="Participant_00rwspb" name="Applicant" processRef="Process_1q2tl2c" />
     <bpmn:messageFlow id="MessageFlow_0t6q1ln" sourceRef="Task_07lwpmz" targetRef="Participant_00rwspb" />
     <bpmn:messageFlow id="MessageFlow_055aoro" sourceRef="Task_1g3oo0z" targetRef="Participant_00rwspb" />
+    <bpmn:messageFlow id="MessageFlow_03mgsp9" sourceRef="Participant_00rwspb" targetRef="StartEvent_0tl9t8p" />
   </bpmn:collaboration>
   <bpmn:process id="recruit-air_process" isExecutable="true">
     <bpmn:laneSet id="LaneSet_0ogxtg5">
@@ -211,6 +212,15 @@
     <bpmn:businessRuleTask id="Task_03vbi6d" name="Score application" camunda:resultVariable="score" camunda:decisionRef="scoringTable" camunda:mapDecisionResult="singleEntry">
       <bpmn:extensionElements>
         <camunda:inputOutput>
+          <camunda:inputParameter name="AgeSum">
+            <camunda:script scriptFormat="JavaScript">number(FormFieldAgeSum)</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="ExpSum">
+            <camunda:script scriptFormat="JavaScript">number(FormFieldExpSum)</camunda:script>
+          </camunda:inputParameter>
+          <camunda:inputParameter name="EduSum">
+            <camunda:script scriptFormat="JavaScript">number(FormFieldEduSum)</camunda:script>
+          </camunda:inputParameter>
           <camunda:outputParameter name="score">${scoringTable.score}</camunda:outputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
@@ -380,6 +390,10 @@
       <bpmndi:BPMNEdge id="SequenceFlow_18v7uw7_di" bpmnElement="SequenceFlow_18v7uw7">
         <di:waypoint x="290" y="317" />
         <di:waypoint x="366" y="317" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_03mgsp9_di" bpmnElement="MessageFlow_03mgsp9">
+        <di:waypoint x="272" y="240" />
+        <di:waypoint x="272" y="299" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
