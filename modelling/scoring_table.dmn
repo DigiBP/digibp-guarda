@@ -6,21 +6,21 @@
     </extensionElements>
     <decisionTable id="decisionTable_1" hitPolicy="COLLECT" aggregation="SUM">
       <input id="input_1" label="ageScore">
-        <inputExpression id="inputExpression_1" typeRef="double">
-          <text>age</text>
+        <inputExpression id="inputExpression_1" typeRef="double" expressionLanguage="JavaScript">
+          <text>ageSum</text>
         </inputExpression>
       </input>
       <input id="InputClause_1fpeh7h" label="experienceScore">
-        <inputExpression id="LiteralExpression_09jzx8e" typeRef="double">
-          <text>experienceScore</text>
+        <inputExpression id="LiteralExpression_09jzx8e" typeRef="double" expressionLanguage="JavaScript">
+          <text>expSum</text>
         </inputExpression>
       </input>
       <input id="InputClause_1ip02vy" label="educationScore">
-        <inputExpression id="LiteralExpression_133cxnc" typeRef="double">
-          <text>educationScore</text>
+        <inputExpression id="LiteralExpression_133cxnc" typeRef="double" expressionLanguage="JavaScript">
+          <text>eduSum</text>
         </inputExpression>
       </input>
-      <output id="output_1" label="score" name="score" typeRef="double" />
+      <output id="output_1" label="Score" name="score" typeRef="double" />
       <rule id="DecisionRule_1huy7ae">
         <inputEntry id="UnaryTests_1wyrr3y">
           <text>[0..5[</text>
@@ -32,7 +32,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vdrnf4">
-          <text>0</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1h1fmuf">
@@ -46,7 +46,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o24nke">
-          <text>5</text>
+          <text>40</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15olppf">
@@ -60,7 +60,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fx5xq5">
-          <text>20</text>
+          <text>60</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11emssh">
@@ -74,7 +74,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qdbxub">
-          <text>5</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_08g7qm5">
@@ -88,7 +88,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0by4cse">
-          <text>15</text>
+          <text>60</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1to5jhp">
@@ -102,7 +102,7 @@
           <text>[0..5[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_022v75q">
-          <text>5</text>
+          <text>30</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0m37eq0">
@@ -116,7 +116,7 @@
           <text>&gt;= 5</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_095dy9u">
-          <text>10</text>
+          <text>50</text>
         </outputEntry>
       </rule>
     </decisionTable>
