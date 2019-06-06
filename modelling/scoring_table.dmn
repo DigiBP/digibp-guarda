@@ -23,7 +23,7 @@
       <output id="output_1" label="Score" name="score" typeRef="double" />
       <rule id="DecisionRule_1huy7ae">
         <inputEntry id="UnaryTests_1wyrr3y">
-          <text>[0..5[</text>
+          <text>[0..40]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gt247e">
           <text></text>
@@ -32,12 +32,12 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vdrnf4">
-          <text>20</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1h1fmuf">
         <inputEntry id="UnaryTests_00h4al5">
-          <text>[5..20[</text>
+          <text>]40..60[</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nirqjt">
           <text></text>
@@ -46,12 +46,12 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o24nke">
-          <text>40</text>
+          <text>20</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15olppf">
         <inputEntry id="UnaryTests_0mnupsr">
-          <text>&gt;= 20</text>
+          <text>&gt;= 60</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09ssm1u">
           <text></text>
@@ -68,13 +68,27 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jgtax9">
-          <text>[0..5[</text>
+          <text>[0..40]</text>
         </inputEntry>
         <inputEntry id="UnaryTests_058xikz">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qdbxub">
-          <text>20</text>
+          <text>10</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u3jlsm">
+        <inputEntry id="UnaryTests_119080o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uasdy4">
+          <text>]40..60[</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b32i2v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cxo9u1">
+          <text>30</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_08g7qm5">
@@ -82,7 +96,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_05pnvfs">
-          <text>&gt;= 5</text>
+          <text>&gt;= 60</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pd9f20">
           <text></text>
@@ -99,10 +113,10 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tbr8fc">
-          <text>[0..5[</text>
+          <text>[0..40]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_022v75q">
-          <text>30</text>
+          <text>10</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0m37eq0">
@@ -113,10 +127,24 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_13mwxdk">
-          <text>&gt;= 5</text>
+          <text>]40..60[</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_095dy9u">
-          <text>50</text>
+          <text>40</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fzwlmi">
+        <inputEntry id="UnaryTests_0pze2hl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ihf3g9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_190zymy">
+          <text>&gt;= 60</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jp40cl">
+          <text>60</text>
         </outputEntry>
       </rule>
     </decisionTable>
